@@ -1,0 +1,52 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging / wheels
+pip-wheel-metadata/
+
+# --- Jupyter / tooling ---
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+.tox/
+.cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Editors / IDEs
+.vscode/
+.idea/
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+
+# --- Data & artifacts (keep repo light) ---
+data/
+*.csv
+*.tsv
+*.xlsx
+*.zip
+*.log
+
+# --- Figures ---
+# keep committed images in `images/` (do NOT ignore that folder)
+outputs/
+figures/
