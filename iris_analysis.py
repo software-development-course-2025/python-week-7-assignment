@@ -11,14 +11,29 @@ def load_and_inspect_iris():
         df = pd.DataFrame(iris.data, columns=iris.feature_names)
         df['species'] = pd.Categorical.from_codes(iris.target, iris.target_names)
 
+        # Display first 5 rows
         print("\n✅ First 5 rows:")
         print(df.head())
 
-        print("\n🧠 Dataset Info:")
+        # DataFrame info
+        print("\nℹ️ Dataset Info:")
         print(df.info())
 
-        print("\n🔎 Missing values check:")
+        # Check for missing values
+        print("\n🔎 Missing Values Check:")
         print(df.isnull().sum())
+
+        # Descriptive statistics
+        print("\n📊 Descriptive Statistics:")
+        print(df.describe())
+
+        # Group by species and compute means
+        print("\n🌸 Mean Measurements per Species:")
+        print(df.groupby("species").mean())
+
+        # Simple observation
+        print("\n📝 Observation:")
+        print("Setosa has significantly smaller petal length and width compared to the other species.")
 
         return df
 
