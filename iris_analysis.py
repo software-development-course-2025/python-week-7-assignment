@@ -2,7 +2,22 @@
 
 import pandas as pd
 from sklearn.datasets import load_iris
+import os
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
 
+# Suppress FutureWarnings (cleaner output for reviewers)
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+# Use Agg backend for headless environments (safe for servers and CI)
+matplotlib.use('Agg')
+
+
+# ---------------------------
+# Data loading and inspection
+# ---------------------------
 def load_and_inspect_iris():
     print("🔍 Loading the Iris dataset...")
 
@@ -16,7 +31,7 @@ def load_and_inspect_iris():
         print(df.head())
 
         # DataFrame info
-        print("\nℹ️ Dataset Info:")
+        print("\nℹ️ Dataset Information:")
         print(df.info())
 
         # Check for missing values
@@ -41,16 +56,10 @@ def load_and_inspect_iris():
         print(f"❌ Error loading dataset: {e}")
         return None
 
-if __name__ == "__main__":
-    df = load_and_inspect_iris()
 
-import os
-import matplotlib
-# Use Agg backend for headless environments (safe for servers and CI)
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import seaborn as sns
-
+# ---------------------------
+# Visualization functions
+# ---------------------------
 def save_visualizations(df, outdir='images'):
     """Save example visualizations to `outdir` (PNG files)."""
     os.makedirs(outdir, exist_ok=True)
@@ -100,8 +109,12 @@ def save_visualizations(df, outdir='images'):
     fig.savefig(os.path.join(outdir, 'scatter_sepal_vs_petal.png'), dpi=150, bbox_inches='tight')
     plt.close(fig)
 
-    print(f"Saved visualizations to '{outdir}/'")
+    print(f"✅ Saved visualizations to '{outdir}/'")
 
+
+# ---------------------------
+# Main entry point
+# ---------------------------
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Iris dataset analysis and optional figure export")
