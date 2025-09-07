@@ -68,3 +68,10 @@ This project is distributed under the MIT License. See [LICENSE](LICENSE).
 
 - **Name**:  Augusto Mate  
 - **E-mail**:  mate.augusto.mz@gmail.com
+
+---
+
+## Versioning
+
+Version **v1.0.0** has been released! 🎉  
+See the [release page](https://github.com/software-development-course-2025/python-week-7-assignment/releases/tag/v1.0.0) for full details.
